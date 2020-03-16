@@ -15,4 +15,4 @@ npm install
 ```
 npm run server
 ```
-请在浏览器中地址 [localhost:3000](localhost:3000) 浏览应用。
+请在浏览器中地址 localhost:3000 浏览应用。
