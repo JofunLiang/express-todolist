@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Todo List</title>
+  <link rel="stylesheet" href="/static/css/index.css">
+</head>
+<body>
+  <nav class="nav">
+      <div class="nav-inner">
+          <div class="logo">TodoList</div>
+          <div class="toolbar">
+              <input type="text" class="input">
+              <button class="btn add-btn" type="button">添加</button>
+          </div>
+      </div>
+  </nav>
+  <div class="container">
+    <ui class="list">
+      <% todos.forEach(todo => { %>
+        <li><%= todo.content %>
+            <button class="btn del-btn" data-id="<%= todo.id %>" type="button">删除</button>
+        </li>
+      <% }); %>
+    </ui>
+  </div>
+  <script src="/static/js/index.js"></script>
+</body>
+</html>

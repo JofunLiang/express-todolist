@@ -1,0 +1,22 @@
+{
+  "name": "express-todolist",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "node app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "node-gyp": "^6.1.0",
+    "node-readability": "^3.0.0",
+    "sqlite3": "^4.1.1",
+    "windows-build-tools": "^5.2.2"
+  }
+}
