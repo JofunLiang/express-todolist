@@ -1,18 +1,18 @@
 const sqlite = require('sqlite3').verbose()
-const db = new sqlite.Database('todolist')
+const db = new sqlite.Database('todos.sqlite')
 
 db.serialize(() => {
-  const sql = `CREATE TABLE IF NOT EXISTS todolist (id integer primary key, content TEXT)`
+  const sql = `CREATE TABLE IF NOT EXISTS todos (id integer primary key, content TEXT)`
   db.run(sql)
 })
 
 class Todolist {
   static all (cb) {
-    db.all('SELECT * FROM todolist ORDER BY id DESC', cb)
+    db.all('SELECT * FROM todos ORDER BY id DESC', cb)
   }
 
   static create (todo, cb) {
-    const sql = 'INSERT INTO todolist(content) VALUES (?)'
+    const sql = 'INSERT INTO todos(content) VALUES (?)'
     db.run(sql, todo.content, err => {
       if (err) return cb(err)
       db.all('SELECT LAST_INSERT_ROWID()', (err, data) => {
@@ -25,7 +25,7 @@ class Todolist {
 
   static delete (id, cb) {
     if (!id) return cb(new Error('Please provide an id.'))
-    db.run('DELETE FROM todolist WHERE id = ?', id, cb)
+    db.run('DELETE FROM todos WHERE id = ?', id, cb)
   }
 }
 
